@@ -6,27 +6,33 @@ public class Cube1 : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject myPrefab;
-
+    GameObject g;
+    public List<GameObject> listofGs;
     void Start()
     {
-        for (int i = 0; i < 6; i++)
+        float radius = 1;
+        for (int i = 0; i <= 10; i++)
         {
-            float radius = 1;
-            float xPos = Mathf.PI * radius * Mathf.Cos(i);
-            float yPos = Mathf.PI * radius * Mathf.Sin(i);
-            Instantiate(myPrefab, new Vector3(xPos, 0, yPos), Quaternion.identity);
-            for (int j = 0; j < i; j++)
+            int numbPrefabs = (int)(2.0f * Mathf.PI * i * radius);
+            float theta = Mathf.PI * 2.0f / ((float)numbPrefabs);
+            for (int j = 0; j < numbPrefabs; j++)
             {
-                float xPos2 = Mathf.PI * (radius * 3) * Mathf.Cos(j);
-                float yPos2 = Mathf.PI * (radius * 3) * Mathf.Sin(j);
-                Instantiate(myPrefab, new Vector3(xPos2, 0, yPos2), Quaternion.identity);
+                float angle = j * theta;
+                float x = (radius) * Mathf.Cos(angle) * i;
+                float y = (radius) * Mathf.Sin(angle) * i;
+                g = Instantiate(myPrefab, new Vector3(x, 0, y), Quaternion.identity);
             }
+            listofGs.Add(g);
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0.1f, 0, 0.1f);
+        // transform.Rotate(0.1f, 0, 0.1f);
+        for (int i = 0; i < listofGs.Count - 1; i++)
+        {
+            listofGs[i].transform.Rotate(0.1f, 0, 0.1f);
+        }
     }
 }
