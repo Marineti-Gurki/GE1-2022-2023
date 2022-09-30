@@ -29,7 +29,8 @@ public class Cube1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // transform.Rotate(0.1f, 0, 0.1f);
+        g.transform.Rotate(0.1f, 0, 0.1f);
+        transform.Rotate(0.1f, 0, 0.1f);
         for (int i = 0; i < listofGs.Count - 1; i++)
         {
             listofGs[i].transform.Rotate(0.1f, 0, 0.1f);
