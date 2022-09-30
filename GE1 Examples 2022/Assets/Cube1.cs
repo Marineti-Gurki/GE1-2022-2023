@@ -12,6 +12,8 @@ public class Cube1 : MonoBehaviour
 =======
     public GameObject myPrefab;
     public List<GameObject> listofGs;
+    [SerializeField]
+    int speed = 300;
     void Start()
     {
         
@@ -25,9 +27,15 @@ public class Cube1 : MonoBehaviour
                 float angle = j * theta;
                 float x = (radius) * Mathf.Cos(angle) * i;
                 float y = (radius) * Mathf.Sin(angle) * i;
+<<<<<<< Updated upstream
 
                 
                 GameObject g = Instantiate(myPrefab, new Vector3(x, 0, y), Quaternion.identity);
+=======
+                GameObject g = Instantiate(myPrefab, new Vector3(x, 0, y), Quaternion.identity);
+                g.GetComponent<Renderer>().material.color = Color.HSVToRGB(j / (float)numbPrefabs, 1, 1);
+
+>>>>>>> Stashed changes
                 listofGs.Add(g);
             }
         }
@@ -38,6 +46,7 @@ public class Cube1 : MonoBehaviour
     void Update()
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         transform.Translate(0, 0, 1);
 =======
         // g.transform.Rotate(0.1f, 0, 0.1f);
@@ -46,6 +55,13 @@ public class Cube1 : MonoBehaviour
         {
             listofGs[i].transform.Rotate(300*Time.deltaTime, 0, 300*Time.deltaTime);
         }
+>>>>>>> Stashed changes
+=======
+        for (int i = 0; i < listofGs.Count; i++)
+        {
+            listofGs[i].transform.Rotate(speed * Time.deltaTime, 0, speed * Time.deltaTime);
+        }
+
 >>>>>>> Stashed changes
     }
 }
