@@ -7,6 +7,7 @@ public class Cube1 : MonoBehaviour
     // Start is called before the first frame update
     public GameObject myPrefab;
     public List<GameObject> listofGs;
+    float rotateSpeed = 300;
     void Start()
     {
         float radius = 1;
@@ -33,7 +34,7 @@ public class Cube1 : MonoBehaviour
     {
         for (int i = 0; i < listofGs.Count; i++)
         {
-            listofGs[i].transform.Rotate(0.1f, 0, 0.1f);
+            listofGs[i].transform.Rotate(rotateSpeed*Time.deltaTime, 0, rotateSpeed*Time.deltaTime);
         }
     }
 }
