@@ -1,4 +1,22 @@
-# Games Engines 1 Assignment 2021-2022
+# Games Engines 1 Assignment 2022-2023 - The Six Million Dollar Man's Lava Lamp
+
+Your task is to create a hologram of an appliance or artwork from a futuristic home of the future as imagined from 1970's sci-fi. Some examples:
+
+- The six million dollar mans lava lamp
+- A self playing guitar or piano
+- A volcano
+- A fire place with futuristic effects
+- A harry potter style book or picture that comes to life
+- An alien in a jar
+- AN R2D2 type robot
+- An abstract audio responsive artwork
+- An octopus in a tank
+- A futuristic machine with lots of lights and moving parts
+ 
+Here are some retro vintage sci-fi references you can Google 
+
+- Space 1999
+- 
 
 Please include a detailed readme.md in your git repo. Here is [a template](assignmentreadme.md). In order to help me grade the assignments include in your readme:
 
@@ -31,13 +49,14 @@ Becomes:
 
 ## Assignment brief
 
-Your assignment is to create an impressive, beautiful and awe inspiring system in Unity by using procedural generation. Paint a picture in code. Your aim is to wow me. It should look like a tech demo or some of the beautiful visuals that you might see at an electronic music event. Check these out for examples:
+Its the future as imagined from 1978. The "six million dollar man", astronaut Steve Austin is hanging out with the bionic woman and Rex the bionic dog in his sci-fi home of the future. Around him are robots, holograms, talking computers with personalities and other cool sci-fi technology.
+
+Your task is to develop a cool sci-fi holographic ornament/lamp for the home of Steve Austin. It should be something groovy that Steve and his friends from other sci-fi TV' programs of the 1970's can enjoy while hanging out and listening to music together on beanbags. 
 
 [2020-2021 Assignment playlist](https://www.youtube.com/watch?v=MXm9OmzRe2o&list=PL1n0B6z4e_E5qaYwUOlJ63XI2OR9ty7Bs)
 
 [2019-2020 Assignment playlist](https://www.youtube.com/watch?v=mSEMEWo5zCM&list=PL1n0B6z4e_E6GaGOHiBdPSW0QzICdGs4X)
 
-You should aim to create the effect of your project through produral means and I encourage you to make everything in this assignment yourself. If you want to use 3D models you should create them yourself. The only exception is audio. If you find a beautiful piece of music that you need for your demo you can go ahead and use it.
 
 Also check out the [Procedural generation reddit forum](https://www.reddit.com/r/proceduralgeneration/)
 
