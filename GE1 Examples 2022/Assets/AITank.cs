@@ -12,6 +12,8 @@ public class AITank : MonoBehaviour
     List<Vector3> waypoints = new List<Vector3>();
     public float speed = 10;
     public Transform player;
+    GameObject sphere = null;
+
 
 
     public void OnDrawGizmos()
@@ -60,6 +62,15 @@ public class AITank : MonoBehaviour
 
         Vector3 AItankPos = transform.position;
         Vector3 toNextPosition = waypoints[current] - AItankPos;
+
+        if (sphere == null)
+        {
+            sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            sphere.transform.position = toNextPosition;
+        }
+        Debug.Log(toNextPosition);
+        // Destroy(sphere);
+
         float dist = toNextPosition.magnitude;
         if (dist < 1)
         {
@@ -67,7 +78,8 @@ public class AITank : MonoBehaviour
         }
 
         Vector3 direction = toNextPosition / dist;
-        transform.position = Vector3.Lerp(transform.position, waypoints[current], Time.deltaTime);
+        // transform.position = Vector3.Lerp(transform.position, waypoints[current], Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, waypoints[current], Time.deltaTime);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(toNextPosition, Vector3.up), 180 * Time.deltaTime);
 
 
@@ -78,16 +90,16 @@ public class AITank : MonoBehaviour
         float angle = Mathf.Acos(dot) * Mathf.Rad2Deg;
         if (angle < 45)
         {
-            Debug.Log("Inside of fov");
+            // Debug.Log("Inside of fov");
             // GameManager.Log("Hello from th AI tank");
         }
         if (dot > 0)
         {
-            Debug.Log("Front");
+            // Debug.Log("Front");
         }
         else
         {
-            Debug.Log("Behind");
+            // Debug.Log("Behind");
         }
         // Task 5
         // Put code here to calculate if the player is inside the field of view and in range
